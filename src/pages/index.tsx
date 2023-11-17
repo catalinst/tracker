@@ -13,8 +13,8 @@ export default function Home() {
   }, []);
 
   const unpackPrices = (data) => {
-    setEthPrice(parseFloat(data[0].price).toFixed(2));
-    setMemePrice(parseFloat(data[1].price).toFixed(2));
+    setEthPrice(data[0].price);
+    setMemePrice(data[1].price);
   };
 
   const computeBid = (data) => {
@@ -34,19 +34,25 @@ export default function Home() {
       .then(data => computeBid(data));
   };
 
+  const computeMemecoinValue = () =>
+    +((626420 * memePrice).toFixed(2))
+
+  const computeCaptainzValue = () =>
+    +((2 * bidValue * ethPrice).toFixed(2))
+
   return (
     <main className={styles.main}>
       <div className={styles.description}>
-        Memecoin value: {626420 * memePrice}
+        Memecoin value: {computeMemecoinValue()}
       </div>
       <div className={styles.description}>
-        Captainz value: {2 * bidValue * ethPrice}
+        Captainz value: {computeCaptainzValue()}
       </div>
       <div className={styles.description}>
-        Total value: {626420 * memePrice + 2 * bidValue * ethPrice}
+        Total value: {computeMemecoinValue() + computeCaptainzValue()}
       </div>
       <div className={styles.description}>
-        Captainz eth value: {2 * bidValue}
+        Captainz eth value: {2 * bidValue.toFixed(2)}
       </div>
     </main>
   );
