@@ -35,10 +35,10 @@ export default function Home() {
   };
 
   const computeMemecoinValue = () =>
-    (600000 * memePrice).toFixed(2)
+    (549000 * memePrice).toFixed(2)
 
   const computeCaptainzValue = () =>
-    (2 * bidValue * ethPrice).toFixed(2)
+    (3 * bidValue * ethPrice).toFixed(2)
 
   const computeTotalValue = () =>
     (Number(computeMemecoinValue()) + Number(computeCaptainzValue())).toFixed(2)
@@ -55,7 +55,7 @@ export default function Home() {
         Total value: {computeTotalValue()}
       </div>
       <div className={styles.description}>
-        Captainz eth value: {2 * bidValue.toFixed(2)}
+        Captainz eth value: {3 * bidValue.toFixed(2)}
       </div>
     </main>
   );
