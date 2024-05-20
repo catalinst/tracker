@@ -55,7 +55,7 @@ export default function Home() {
         Total value: {computeTotalValue()}
       </div>
       <div className={styles.description}>
-        Captainz eth value: {(3 * bidValue).toFixed(2)}
+        Captainz eth value: {(2 * bidValue).toFixed(2)}
       </div>
     </main>
   );
