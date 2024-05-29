@@ -19,7 +19,7 @@ export default function Home() {
 
   const computeBid = (data) => {
     const value = Number(data.stats.market.topBid.price.amount.decimal);
-    setBidValue(value - 0.1);
+    setBidValue(value - value * 0.005);
   };
 
   const getPrices = () => {
@@ -35,7 +35,7 @@ export default function Home() {
   };
 
   const computeMemecoinValue = () =>
-    (649900 * memePrice).toFixed(2)
+    (741187 * memePrice).toFixed(2)
 
   const computeCaptainzValue = () =>
     (2 * bidValue * ethPrice).toFixed(2)
