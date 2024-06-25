@@ -35,7 +35,7 @@ export default function Home() {
   };
 
   const computeMemecoinValue = () =>
-    (741187 * memePrice).toFixed(2)
+    (848485 * memePrice).toFixed(2)
 
   const computeCaptainzValue = () =>
     (2 * bidValue * ethPrice).toFixed(2)
